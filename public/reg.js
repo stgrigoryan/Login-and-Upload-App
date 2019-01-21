@@ -10,9 +10,14 @@ function submitForm (formData) {
   return false;
 }
 
-btnSignUp.onclick = function () {
+btnSignUp.onclick = function (e) {
   let formData = new FormData(document.getElementById('reg-form'));
-  let sendData = JSON.parse(formData);
-  //console.log(formData.get('username'));
-  submitForm(sendData);
+  // let sendData = JSON.parse(formData);
+  // //console.log(formData.get('username'));
+  // submitForm(sendData);
+  //  if (formData.get('password') !== formData.get('confirm-password')){
+  //    e.preventDefault();
+  //   alert("Passwords must be similiar!");
+  // }
+
 };

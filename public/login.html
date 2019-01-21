@@ -15,11 +15,11 @@
   <h1>Member Login</h1>
 
   <label>Username:
-    <input type="text" name="username" placeholder="Username" class="email"  required>
+    <input type="text" name="username" placeholder="Username" class="email"  required minlength="4" maxlength="10">
   </label>
 
   <label >Password:
-    <input type="password" name="email" placeholder="Password" class="password" required>
+    <input type="password" name="email" placeholder="Password" class="password" required minlength="6" maxlength="15">
   </label>
 
   <button type="submit" id="signin">Log in</button>

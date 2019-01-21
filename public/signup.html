@@ -10,20 +10,20 @@
 
 <body>
 
-  <form id='reg-form'>
+  <form id='reg-form' method="POST" action="/register">
   <div class="box">
   <h1>Registration</h1>
 
   <label>Username:
-    <input type="text" name="username" placeholder="Username" class="email"  required>
+    <input type="text" name="username" placeholder="Username" class="email"  required minlength="4" maxlength="10">
   </label>
 
   <label >Password:
-    <input type="password" name="password" placeholder="Password" class="password" required>
+    <input type="password" name="password" placeholder="Password" class="password" required minlength="6" maxlength="15">
   </label>
 
   <label >Confirm password:
-    <input type="password" name="confirm-password" placeholder="Confirm password" class="password" required>
+    <input type="password" name="confirmPassword" placeholder="Confirm password" class="password" required minlength="6" maxlength="15">
   </label>
 
   <div style="text-align:center;">
