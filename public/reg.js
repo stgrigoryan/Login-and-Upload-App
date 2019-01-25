@@ -15,9 +15,9 @@ btnSignUp.onclick = function (e) {
   // let sendData = JSON.parse(formData);
   // //console.log(formData.get('username'));
   // submitForm(sendData);
-  //  if (formData.get('password') !== formData.get('confirm-password')){
-  //    e.preventDefault();
-  //   alert("Passwords must be similiar!");
-  // }
+   if (formData.get('password') !== formData.get('confirmPassword')){
+     e.preventDefault();
+    alert("Passwords must be similiar!");
+  }
 
 };

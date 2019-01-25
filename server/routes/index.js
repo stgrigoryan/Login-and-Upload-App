@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const User = require('../models/users');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 router.get('/', (req, res) => {
   return res.sendFile(path.join(__dirname + '../../../public/login.html'));
@@ -14,7 +15,7 @@ router.post('/register', (req,res) => {
 
   if ( !username || !password || !confirmPassword) {
     res.send("All fields must be filled out!");
-  } 
+  }
   if (password !== confirmPassword) {
     res.send("Passwords must be identical!");
   }
@@ -39,10 +40,16 @@ router.post('/register', (req,res) => {
           })
           .catch(err => (console.log(err)));
         }))
-
       }
     });
+});
 
+router.post('/login', (req,res) => {
+  passport.authenticate('local', {
+    successRedirect: '/profile.html',
+    failureRedirect: '/login.html',
+    failureFlash: true
+  });
 });
 
 module.exports = router;
