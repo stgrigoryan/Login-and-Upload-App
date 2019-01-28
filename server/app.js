@@ -1,7 +1,7 @@
-const express = require ('express');
+const express = require('express');
 const app = express();
 const path = require('path');
-const bodyParser = require ('body-parser');
+const bodyParser = require('body-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -14,7 +14,9 @@ const port = process.env.PORT || 5000;
 
 //Using bodyparser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 //Serve static files
 app.use(express.static(path.join(__dirname, '../public')));
@@ -23,7 +25,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', routes);
 
 //Using sessions for tracking logins
-  app.use(session({
+app.use(session({
   secret: 'secretization',
   resave: true,
   saveUninitialized: true
@@ -36,8 +38,9 @@ app.use(passport.session());
 //Create MongoDB connection
 mongoose
   .connect(
-    'mongodb://localhost:27017/users',
-    { useNewUrlParser: true }
+    'mongodb://localhost:27017/users', {
+      useNewUrlParser: true
+    }
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));

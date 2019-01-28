@@ -6,35 +6,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login page</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 </head>
 
 <body>
-
+<div class="container">
   <form id='reg-form' method="POST" action="/register">
-  <div class="box">
-  <h1>Registration</h1>
 
-  <label>Username:
-    <input type="text" name="username" placeholder="Username" class="email"  required minlength="4" maxlength="10">
-  </label>
+    <h1>Registration</h1>
 
-  <label >Password:
-    <input type="password" name="password" placeholder="Password" class="password" required minlength="6" maxlength="15">
-  </label>
+    <label>Username:
+      <input type="text" name="username" placeholder="Username" class="email" required minlength="4" maxlength="10">
+    </label>
 
-  <label >Confirm password:
-    <input type="password" name="confirmPassword" placeholder="Confirm password" class="password" required minlength="6" maxlength="15">
-  </label>
+    <label>Password:
+      <input type="password" name="password" placeholder="Password" class="password" required minlength="6" maxlength="15">
+    </label>
 
-  <div style="text-align:center;">
-    <button style="width:160px;" type="submit" id="signup">Sign Up</button>
-  </div>
+    <label>Confirm password:
+      <input type="password" name="confirmPassword" placeholder="Confirm password" class="password" required minlength="6" maxlength="15">
+    </label>
 
-  </div>
+    <div>
+      <button class="button" type="submit" id="signup">Sign Up</button>
+    </div>
 
   </form>
 
-  <p>Forgot your password? <u style="color:#f1c40f;">Click Here!</u></p>
+</div>
 
   <script src="reg.js"></script>
 
