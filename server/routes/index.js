@@ -5,8 +5,16 @@ const path = require('path');
 const User = require('../models/users');
 const bcrypt = require('bcrypt');
 const passport = require('passport');
+const loggedIn = require('../config/authenticated');
 
 router.get('/', (req, res) => res.sendFile(path.join(__dirname + '../../../public/login.html')));
+
+router.get('/login', (req, res) => res.sendFile(path.join(__dirname + '../../../public/login.html')));
+
+router.get('/profile', loggedIn, (req, res) => {
+  console.log('profile');
+  res.sendFile(path.join(__dirname + '../../../public/profile.html'));
+});
 
 router.post('/register', (req, res) => {
   const {
@@ -44,17 +52,23 @@ router.post('/register', (req, res) => {
                 res.sendFile(path.join(__dirname + '../../../public/login.html'));
               })
               .catch(err => (console.log(err)));
-          }))
+          }));
       }
     });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
-    successRedirect: '/profile.html',
-    failureRedirect: '/login.html',
-    failureFlash: true
-  });
+    successRedirect: '/profile',
+    failureRedirect: '/login'
+    //failureFlash: true
+  })(req, res, next);
+  console.log("Login");
+});
+
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.sendFile(path.join(__dirname + '../../../public/login.html'));
 });
 
 module.exports = router;

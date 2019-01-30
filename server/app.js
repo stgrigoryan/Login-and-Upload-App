@@ -8,6 +8,8 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 const routes = require('./routes/index.js');
 
+//Passport config
+require('./config/passport')(passport);
 
 //Defining port
 const port = process.env.PORT || 5000;
@@ -20,9 +22,6 @@ app.use(bodyParser.urlencoded({
 
 //Serve static files
 app.use(express.static(path.join(__dirname, '../public')));
-
-//Routes
-app.use('/', routes);
 
 //Using sessions for tracking logins
 app.use(session({
@@ -44,6 +43,9 @@ mongoose
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
+
+//Routes
+app.use('/', routes);
 
 //Starting up the server
 app.listen(port, console.log(`Server started on the ${port}`));
