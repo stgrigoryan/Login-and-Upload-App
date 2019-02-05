@@ -34,6 +34,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+mongoose.set('useNewUrlParser', true);
+
 //Create MongoDB connection
 mongoose
   .connect(
