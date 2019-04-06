@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Registration</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+  <form id='reg-form' method="POST" action="/register">
+
+    <h1>Registration</h1>
+
+    <label>Username:
+      <input type="text" name="username" placeholder="Username" class="username" required minlength="4" maxlength="10">
+    </label>
+
+    <label>Password:
+      <input type="password" name="password" placeholder="Password" class="password" required minlength="6" maxlength="15">
+    </label>
+
+    <label>Confirm password:
+      <input type="password" name="confirmPassword" placeholder="Confirm password" class="password" required minlength="6" maxlength="15">
+    </label>
+
+    <div>
+      <button class="button" type="submit" id="signup">Sign Up</button>
+    </div>
+
+  </form>
+
+</div>
+
+  <script src="/javascripts/register.js"></script>
+
+</body>
+
+</html>

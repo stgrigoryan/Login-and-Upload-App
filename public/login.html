@@ -12,7 +12,7 @@
 
 <body>
   <div class="container">
-    <form method="post" action="/login">
+    <form id="login-form" action="/login" method="POST">
 
       <h1>Member Login</h1>
 
@@ -30,12 +30,13 @@
       <p>
         If you don't have an account you can:
       </p>
-      <button type="submit" id="signup" class="button">Sign Up</button>
+      <button type="button" id="signup" class="button">Sign Up</button>
   </div>
 
   </form>
 
-  <script src="main.js"></script>
+  <script src="login.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </body>
 
