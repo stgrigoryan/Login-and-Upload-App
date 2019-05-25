@@ -10,7 +10,7 @@ function submitForm (formData) {
   return false;
 }
 
-btnSignUp.onclick = function (e) {
+/* btnSignUp.onclick = function (e) {
   let formData = new FormData(document.getElementById('reg-form'));
   // let sendData = JSON.parse(formData);
   // //console.log(formData.get('username'));
@@ -20,4 +20,4 @@ btnSignUp.onclick = function (e) {
     alert("Passwords must be similiar!");
   }
 
-};
+}; */

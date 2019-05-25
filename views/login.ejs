@@ -12,18 +12,20 @@
 
 <body>
   <div class="container">
-    <form id="login-form" action="/login" method="POST">
+    <form action="/login" method="post" id="login-form" >
 
       <h1>Member Login</h1>
 
       <div class="form-div">
         <label for="username">Username:</label>
-        <input id="username" type="text" name="username" placeholder="Username" class="username" required minlength="4" maxlength="10">
+        <input id="username" type="text" name="username" placeholder="Username" class="username" required minlength="4"
+          maxlength="10">
       </div>
 
       <div class="form-div">
         <label for="password">Password:</label>
-        <input id="password" type="password" name="password" placeholder="Password" class="password" required minlength="6" maxlength="15">
+        <input id="password" type="password" name="password" placeholder="Password" class="password" required
+          minlength="6" maxlength="15">
       </div>
 
       <button type="submit" id="signin" class="button">Log in</button>
@@ -31,9 +33,10 @@
         If you don't have an account you can:
       </p>
       <button type="button" id="signup" class="button">Sign Up</button>
+    </form>
   </div>
 
-  </form>
+
 
   <script src="/javascripts/login.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

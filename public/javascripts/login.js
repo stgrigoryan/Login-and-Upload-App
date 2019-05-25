@@ -20,10 +20,6 @@ btnSignUp.onclick = function() {
   window.location.href = "/register";
 };
 
-bntSignIn.onsubmit = function() {
-  if (true) {}
-  return false;
-};
 //   const username = document.getElementById("username").value;
 //   const password = document.getElementById("password").value;
 //   console.log(username, password);

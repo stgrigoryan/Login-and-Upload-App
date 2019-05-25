@@ -43,7 +43,7 @@ app.use('/', routes);
 
 mongoose.set('useNewUrlParser', true);
 
-//Create MongoDB connection
+/* //Create MongoDB connection
 mongoose
   .connect(
     'mongodb://localhost:27017/users', {
@@ -51,7 +51,7 @@ mongoose
     }
   )
   .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err)); */
 
 //Starting up the server
 app.listen(port, console.log(`Server started on the ${port}`));
